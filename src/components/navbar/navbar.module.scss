@@ -1,0 +1,114 @@
+.hero_name{
+  position: fixed;
+  left: 30px;
+  top: 50px;
+  z-index: 9;
+  cursor: pointer;
+
+  a{
+    text-decoration: none;
+    color: #455ce9;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    transform: rotate(0);
+    transition: all 0.3s ease-in;
+  }
+  
+  &:hover a{
+    transform: rotate(-3deg);
+    color: #fefefe;
+  }
+}
+
+.hamburger {
+  position: fixed;
+  right: 30px;
+  top: 50px;
+  z-index: 9;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #455ce9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // &::after {
+  //   content: "";
+  //   background-color: #0f0f0f;
+  //   border-radius: 50%;
+  //   display: block;
+  //   height: 100%;
+  //   width: 100%;
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: 0;
+  //   transform: translate(0, 100%);
+  //   transform-origin: top bottom;
+  //   transition: 0.3s transform ease;
+  //   will-change: transform;
+  //   z-index: -1;
+  // }
+
+  // &:hover::after {
+  //   transform: translate(0, 0);
+  // }
+
+  // &:hover {
+  //   transform: scale(1.05);
+  //   will-change: transform;
+  // }
+
+  .burger {
+    width: 100%;
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: white;
+      margin: auto;
+      position: relative;
+      transition: all 0.5s ease;
+    }
+
+    &::after {
+      top: -5px;
+    }
+
+    &::before {
+      top: 5px;
+    }
+  }
+
+  .burgerActive {
+    &::after {
+      top: -1px;
+      transform: rotate(-45deg);
+      transition: all 0.5s ease;
+    }
+
+    &::before {
+      top: 1px;
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    height: 50px;
+    width: 50px;
+  }
+}
