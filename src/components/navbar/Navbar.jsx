@@ -15,7 +15,7 @@ const Navbar = () => {
   }, [pathname])
 
   useEffect(() => {
-    // gsap.fromTo(hamburgerRef.current, { x: 200 }, { x: 0, duration: 1, ease: "elastic.inOut" });
+    gsap.fromTo(hamburgerRef.current, { x: 200 }, { x: 0, duration: 1, ease: "elastic.inOut" });
   }, [])
 
   return (

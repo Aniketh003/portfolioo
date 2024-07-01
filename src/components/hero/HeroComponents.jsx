@@ -46,30 +46,30 @@ const HeroComponents = () => {
     },
   ];
 
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   gsap.fromTo(HeadingRef.current, {
-  //     y: '100%',
-  //     opacity: 0,
-  //   }, {
-  //     y: "0%",
-  //     delay: 0.6,
-  //     duration: 0.5,
-  //     opacity: 1,
-  //     ease: 'power4.in',
-  //   })
+    gsap.fromTo(HeadingRef.current, {
+      y: '100%',
+      opacity: 0,
+    }, {
+      y: "0%",
+      delay: 0.6,
+      duration: 0.5,
+      opacity: 1,
+      ease: 'power4.in',
+    })
 
-  //   gsap.fromTo(iconsRef.current.children, {
-  //     y: '-10%',
-  //     opacity: 0,
-  //   }, {
-  //     y: "0%",
-  //     delay: 1.2,
-  //     opacity: 1,
-  //     stagger: 0.25
-  //   })
+    gsap.fromTo(iconsRef.current.children, {
+      y: '-10%',
+      opacity: 0,
+    }, {
+      y: "0%",
+      delay: 1.2,
+      opacity: 1,
+      stagger: 0.25
+    })
 
-  // }, [])
+  }, [])
 
   return (
     <div className={styles.heroContainer}>
