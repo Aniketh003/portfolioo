@@ -6,15 +6,15 @@ const CurrentInfo = () => {
   const currentRef = useRef(null)
 
   useEffect(() => {
-    // gsap.fromTo(currentRef.current, {
-    //   y: '100%',
-    //   opacity: 0,
-    // }, {
-    //   y: "0%",
-    //   delay: 1.3,
-    //   duration: 0.5,
-    //   opacity: 1,
-    // })
+    gsap.fromTo(currentRef.current, {
+      y: '100%',
+      opacity: 0,
+    }, {
+      y: "0%",
+      delay: 1.3,
+      duration: 0.5,
+      opacity: 1,
+    })
   }, [])
   return (
     <div className={styles.currentInfo} ref={currentRef}>
