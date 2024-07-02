@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import styles from "./footer.module.css"
 import line from '../../assets/arrow-line.svg'
+import { toast } from 'react-toastify'
 
 const Footer = () => {
-  const [emailCopied,setEmailCopied] = useState("anikethbusavale03@gmail.com")
+  const [emailCopied, setEmailCopied] = useState("anikethbusavale03@gmail.com")
   const socialMediaLinks = [
     {
       icon: line,
@@ -70,6 +71,10 @@ const Footer = () => {
     navigator.clipboard.writeText(emailCopied)
       .then(() => {
         setEmailCopied("Email copied")
+        toast("Email copied !!");
+        setTimeout(() => {
+          setEmailCopied("anikethbusavale03@gmail.com")
+        }, 1500);
       })
       .catch(err => {
         console.error('Failed to copy text: ', err);
@@ -78,52 +83,54 @@ const Footer = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
-        <a href="/">अनिकेत भुसावळे</a>
-        <div className={styles.links_container}>
-          <div className={`${styles.social} ${styles.link_container}`}>
-            <p>social</p>
-            <div className={styles.links}>
-              {socialMediaLinks.map((link) => (
-                <a href={link.link} target='_blank'>
-                  <p>{link.text}</p>
-                  <img src={link.icon} alt={link.text} />
-                </a>
-              ))}
+      <div className={styles.cover}>
+        <div className={styles.main}>
+          <a href="/">अनिकेत भुसावळे</a>
+          <div className={styles.links_container}>
+            <div className={`${styles.social} ${styles.link_container}`}>
+              <p>social</p>
+              <div className={styles.links}>
+                {socialMediaLinks.map((link) => (
+                  <a href={link.link} target='_blank' key={link.link}>
+                    <p>{link.text}</p>
+                    <img src={link.icon} alt={link.text} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className={`${styles.contact} ${styles.link_container}`}>
-            <p>contact</p>
-            <div className={styles.links}>
-              {contactLinks.map((link) => (
-                <a href={link.link} target='_blank'>
-                  <p>{link.text}</p>
-                  <img src={link.icon} alt={link.text} />
-                </a>
-              ))}
+            <div className={`${styles.contact} ${styles.link_container}`}>
+              <p>contact</p>
+              <div className={styles.links}>
+                {contactLinks.map((link) => (
+                  <a href={link.link} target='_blank' key={link.link}>
+                    <p>{link.text}</p>
+                    <img src={link.icon} alt={link.text} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className={`${styles.pages} ${styles.link_container}`}>
-            <p>pages</p>
-            <div className={styles.links}>
-              {pageLinks.map((link) => (
-                <a href={link.href} target='_blank'>
-                  <p>{link.title}</p>
-                </a>
-              ))}
+            <div className={`${styles.pages} ${styles.link_container}`}>
+              <p>pages</p>
+              <div className={styles.links}>
+                {pageLinks.map((link) => (
+                  <a href={link.href} target='_blank' key={link.href}>
+                    <p>{link.title}</p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.copyright}>
-        <p>© Aniketh Busavale 2024</p>
-        <div className={styles.email}>
-          <h3>Get in touch (Click to copy)</h3>
-          <h1 onClick={copyToClipboard}>{emailCopied}</h1>
+        <div className={styles.copyright}>
+          <p>© Aniketh Busavale 2024</p>
+          <div className={styles.email}>
+            <h3>Get in touch (Click to copy)</h3>
+            <h1 onClick={copyToClipboard}>{emailCopied}</h1>
+          </div>
         </div>
-      </div>
-      <div className={styles.heading}>
-        <h1>アニケス・ブサバリ</h1>
+        <div className={styles.heading}>
+          <h1>アニケス・ブサバリ</h1>
+        </div>
       </div>
     </div>
   )

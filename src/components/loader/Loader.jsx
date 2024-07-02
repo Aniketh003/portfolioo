@@ -56,12 +56,14 @@ const Loader = ({ isLoading, setIsLoading, mainRef }) => {
         gsap.fromTo(mainRef.current, {
             opacity: 0
         }, {
+            delay:1,
             opacity: 1,
         })
 
         gsap.to(overlayRef.current, {
             opacity: 0,
             delay: 1.5,
+            duration:0.5,
             onComplete: () => {
                 setIsLoading(false);
                 revealMainContent();

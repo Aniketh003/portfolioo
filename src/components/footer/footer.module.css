@@ -1,5 +1,16 @@
 .container {
-  background-color: #0E0E0E;
+  position: relative;
+  background-color: #0e0e0e;
+  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  height: 90vh;
+  width: 100%;
+}
+
+.cover {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90vh;
 }
 
 .main {
@@ -8,11 +19,14 @@
   padding-right: 100px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .main a {
   text-decoration: none;
+  flex: 1;
+  display: block;
   color: #838383;
   font-weight: 800;
   font-size: 22px;
@@ -20,7 +34,8 @@
 
 .main .links_container {
   display: flex;
-  gap: 70px;
+  justify-content: space-between;
+  flex: 1;
 }
 
 .main .links_container p {
@@ -82,8 +97,8 @@
   overflow: hidden;
 }
 
-.copyright{
-  padding-top: 100px;
+.copyright {
+  padding-top: 30px;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -92,17 +107,17 @@
   align-items: center;
 }
 
-.copyright p{
+.copyright p {
   font-size: 24px;
 }
 
-.copyright .email h3{
+.copyright .email h3 {
   font-size: 22px;
   font-weight: 250;
   margin-bottom: 5px;
 }
 
-.copyright .email h1{
+.copyright .email h1 {
   font-family: poppins;
   font-weight: 500;
   cursor: pointer;
@@ -113,16 +128,23 @@
   font-size: 10vw;
   letter-spacing: 1px;
   color: aquamarine;
-  margin: 0;
-  display: block;
-  transform: translateY(12vh);
+  transform: translateY(10vh);
 }
 
 @media (max-width: 768px) {
 
-  .main a{
-    font-size: 20px;
+  .container {
+    height: 38vh;
   }
+  
+  .cover {
+    height:38vh;
+  }
+
+  .main a {
+    display: none;
+  }
+
   .links_container {
     width: 100%;
     justify-content: space-between;
@@ -133,7 +155,7 @@
   }
 
   .link_container {
-    gap: 0px;
+    gap: 10px;
   }
 
   .link_container .links {
@@ -163,23 +185,22 @@
     color: aquamarine;
   }
 
-  .copyright{
+  .copyright {
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
   }
-  
-  .copyright p{
+
+  .copyright p {
     font-size: 10px;
   }
-  
-  .copyright .email h3{
+
+  .copyright .email h3 {
     font-size: 10px;
     margin-bottom: 2px;
   }
-  
-  .copyright .email h1{
+
+  .copyright .email h1 {
     font-size: 12px;
   }
-  
 }
