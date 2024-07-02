@@ -8,6 +8,8 @@ import Footer from './components/footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Lenis from 'lenis';
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import Works from './components/works/Works';
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -19,7 +21,7 @@ function App() {
     restDelta: 0.001
   });
 
-  useEffect( () => {
+  useEffect(() => {
     const lenis = new Lenis()
 
     function raf(time) {
@@ -30,8 +32,16 @@ function App() {
     requestAnimationFrame(raf)
   }, [])
 
+
   return (
-    <>
+    <LocomotiveScrollProvider
+      options={
+        {
+          smooth: true,
+        }
+      }
+      containerRef={mainRef}
+    >
       {isLoading ?
         <Loader isLoading={isLoading} setIsLoading={setIsLoading} mainRef={mainRef} />
         :
@@ -41,13 +51,14 @@ function App() {
           <div className="main-container">
             <div className="container">
               <HeroComponents />
+              <Works/>
             </div>
           </div>
           <Footer />
         </div>
       }
-      <ToastContainer/>
-    </>
+      <ToastContainer />
+    </LocomotiveScrollProvider>
   );
 }
 
