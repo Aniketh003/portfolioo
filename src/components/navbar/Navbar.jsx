@@ -21,9 +21,6 @@ const Navbar = () => {
   return (
     <>
       <nav className={styles.navbar}>
-        <div className={styles.hero_name}>
-          <a href='/'>Aniketh</a>
-        </div>
         <div className={styles.hamburger} ref={hamburgerRef} onClick={() => setIsActive(!isActive)}>
           <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`} ></div>
         </div>
