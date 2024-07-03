@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import styles from "./hero.module.css"
 import gsap from 'gsap'
+import Button from '../button/Button'
 
 const CurrentInfo = () => {
   const currentRef = useRef(null)
@@ -18,7 +19,7 @@ const CurrentInfo = () => {
   }, [])
   return (
     <div className={styles.currentInfo} ref={currentRef}>
-      <span><a href="https://drive.google.com/file/d/1bzCXMH_j-_PKojQk4-HIA9yGYLeswBrT/view?usp=sharing" target='_blank'>RESUME</a></span>
+      <Button link="https://drive.google.com/file/d/1bzCXMH_j-_PKojQk4-HIA9yGYLeswBrT/view?usp=sharing" text="RESUME" />
       <p>Web Devloper Intern at CDK Global</p>
     </div>
   )

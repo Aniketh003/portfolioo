@@ -1,0 +1,56 @@
+span.coustom_button {
+  border: 2px solid #d9d9d9;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  padding: 8px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.2 transfrom ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+span.coustom_button::after {
+  content: "";
+  background-color: #455ce9;
+  border-radius: 50px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 100%);
+  transform-origin: top bottom;
+  transition: 0.3s transform ease;
+  will-change: transform;
+  z-index: -1;
+}
+
+span.coustom_button:hover::after {
+  transform: translate(0, 0);
+}
+
+span.coustom_button:hover {
+  border: 2px solid transparent;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+span.coustom_button a {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+span.coustom_button button {
+  text-decoration: none;
+  color: #d9d9d9;
+  border: none;
+  background-color: transparent;
+  font-size: .9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+}

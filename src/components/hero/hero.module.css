@@ -100,52 +100,6 @@
   gap: 12px;
 }
 
-.currentInfo span {
-  border: 2px solid #d9d9d9;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  padding: 8px 12px;
-  border-radius: 50px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: 0.2 transfrom ease-in-out;
-  will-change: transform;
-  z-index: 0;
-}
-
-.currentInfo span::after {
-  content: "";
-  background-color: #455ce9;
-  border-radius: 50px;
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: translate(0, 100%);
-  transform-origin: top bottom;
-  transition: 0.3s transform ease;
-  will-change: transform;
-  z-index: -1;
-}
-
-.currentInfo span:hover::after {
-  transform: translate(0, 0);
-}
-
-.currentInfo span:hover {
-  border: 2px solid transparent;
-  transform: scale(1.05);
-  will-change: transform;
-}
-
-.currentInfo span a {
-  text-decoration: none;
-  color: #d9d9d9;
-}
 .currentInfo p {
   text-align: center;
   font-size: 1.8rem;
