@@ -1,27 +1,30 @@
 import React from 'react';
 import styles from "./works.module.css"
-import code from "../../assets/code.svg"
+import view from "../../assets/tech/view.svg"
+import github from "../../assets/socialIcons/github.svg"
 
 const Project = ({ project }) => {
     return (
         <div className={styles.project_card}>
-            <div className={styles.project_description}>
-                <h2>{project.title}</h2>
-                <div className={styles.tech_stack}>
-                    {project.techStack.map((ele, index) => (
-                        <img src={ele} alt="icon" key={index} />
-                    ))}
-                    <hr />
-                    <a href={project.code} target='_blank'>
-                        <img src={code} alt="" />
-                    </a>
-                </div>
-            </div>
             <a href={project.source} target='_blank'>
                 <video width="100%" autoPlay loop muted >
                     <source src={project.videoUrl} type="video/mp4" />
                 </video>
             </a>
+            <div className={styles.project_description}>
+                <div className={styles.tech_stack}>
+                    {project.techStack.map((ele) => (
+                        <span>{ele}</span>
+                    ))}
+                </div>
+                <div className={styles.heading}>
+                    <p>{project.title}</p>
+                    <div className={styles.links}>
+                        <a href=""><img src={view} alt="Live" /></a>
+                        <a href=""><img src={github} alt="" /></a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

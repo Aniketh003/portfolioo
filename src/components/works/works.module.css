@@ -22,45 +22,75 @@
 }
 
 .projects {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
+a{
+  text-decoration: none;
+}
 .project_card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  background-color: #0e0e0e;
+  border-radius: 10px;
+  overflow: hidden;
 
   .project_description {
+    padding: 40px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 
-    h2 {
-      font-size: 4vh;
+    .tech_stack{
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+
+      span{
+        padding: 5px 10px;
+        background-color: #0c0c0c;
+        border: 1px solid grey;
+        border-radius: 3px;
+        text-transform: capitalize;
+      }
     }
 
-    .tech_stack {
+    .heading{
       display: flex;
-      gap: 12px;
-      background-color: #101010;
-      padding: 6px 12px;
-      border-radius: 10px;
+      width: 100%;
+      justify-content: space-between;
+
+      .links{
+        display: flex;
+        gap: 10px;
+      }
+
+      p{
+        font-size: 4vh;
+      }
     }
 
     img {
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
     }
   }
 
-  a {
-    text-decoration: none;
+  video {
+    height: 300px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  video {
-    border-radius: 10px;
+  .works h1 {
+    font-size: 8vh;
   }
 }
 
@@ -68,29 +98,26 @@
   .works {
     padding: 10px 0;
     h1 {
-      font-size: 6vh;
+      font-size: 4vh;
       letter-spacing: 2px;
       margin-bottom: 20px;
     }
   }
 
-  .project_card {
-    gap: 6px;
+  .projects {
+    grid-template-columns: 1fr;
 
-    .project_description {
-      h2 {
-        font-size: 2.2vh;
-      }
+    .project_description{
 
-      .tech_stack {
-        gap: 10px;
-        padding: 5px 10px;
-      }
-
-      img {
-        width: 20px;
-        height: 20px;
+      .heading{
+        p{
+          font-size: 3vh;
+        }
       }
     }
+      video{
+        height: fit-content;
+      }
   }
+
 }

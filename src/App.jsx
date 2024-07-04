@@ -13,7 +13,6 @@ import Works from './components/works/Works';
 
 function App() {
   const { scrollYProgress } = useScroll();
-  const [isLoading, setIsLoading] = useState(false);
   const mainRef = useRef(null);
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -34,29 +33,19 @@ function App() {
 
 
   return (
-    <LocomotiveScrollProvider
-      options={
-        {
-          smooth: true,
-        }
-      }
-      containerRef={mainRef}
-    >
-      {isLoading ?
-        <Loader isLoading={isLoading} setIsLoading={setIsLoading} mainRef={mainRef} />
-        :
-        <div className='main' ref={mainRef}>
-          <motion.div className="progress-bar" style={{ scaleX }} />
-          <Navbar />
-          <div className="main-container">
-            <div className="container">
-              <HeroComponents />
-              <Works/>
-            </div>
+    <LocomotiveScrollProvider options={{smooth: true,}} containerRef={mainRef}>
+      <div className='main' ref={mainRef}>
+        <Loader comp={mainRef}/>
+        <motion.div className="progress-bar" style={{ scaleX }} />
+        <div className="main-container">
+          <div className="container">
+            <Navbar />
+            <HeroComponents />
+            <Works />
           </div>
-          <Footer />
         </div>
-      }
+        <Footer />
+      </div>
       <ToastContainer />
     </LocomotiveScrollProvider>
   );

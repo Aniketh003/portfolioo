@@ -1,103 +1,35 @@
-.overlay {
-  position: fixed;
+.loader{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  background-color: #0e0e0e;
   height: 100vh;
   width: 100%;
-  z-index: 11;
-  display: flex;
-  overflow: hidden;
-}
+  z-index: 2000;
+  top: 0;
+  left: 0;
 
-.bar {
-  height: 100vh;
-  width: 20vw;
-  background-color: #1f1f1f;
-}
-
-.header {
-  position: fixed;
-  top: 40px;
-  height: 100%;
-  left: 10px;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  z-index: 1000;
-  overflow: hidden
-}
-
-.header h1, .header p {
-  transform: rotate(360deg);
-}
-
-.header h1{
-  letter-spacing: 2px;
-  font-size: 5vw;
-  line-height: 90%;
-}
-
-.header p{
-  letter-spacing: 2px;
-  font-size: 1vw;
-}
-
-.counter {
-  position: fixed;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  font-size: 15vw;
-  right: 30px;
-  bottom: 30px;
-  z-index: 1000;
-}
-
-
-@media (max-width: 1200px) {
-  .header h1{
-    letter-spacing: 2px;
-    font-size: 15vw;
-    line-height: 90%;
+  h1{
+    font-size: 100px;
+    color: rgb(238, 238, 238);
+    letter-spacing: -1px;
   }
-  
-  .header p{
-    letter-spacing: 2px;
-    font-size: 8vw;
-  }
+}
 
-  .counter{
-    font-size: 24vw;
+@media (max-width: 1024px) {
+  h1{
+    font-size: 100px;
+    color: rgb(238, 238, 238);
+    letter-spacing: -1px;
   }
 }
 
 @media (max-width: 768px) {
-  .header h1{
-    letter-spacing: 2px;
-    font-size: 10vw;
-    line-height: 90%;
-  }
-  
-  .header p{
-    letter-spacing: 2px;
-    font-size: 4vw;
-  }
-
-  .counter{
-    font-size: 26vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .header h1{
-    letter-spacing: 1px;
-    font-size: 12vw;
-    line-height: 90%;
-  }
-  
-  .header p{
-    letter-spacing: 1px;
-    font-size: 3vw;
-  }
-
-  .counter{
-    font-size: 22vw;
+  .loader{
+    h1{
+      font-size: 40px;
+    }
   }
 }

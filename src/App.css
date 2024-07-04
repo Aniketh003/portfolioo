@@ -36,6 +36,10 @@ body {
   display: none;
 }
 
+.main{
+  position: relative;
+}
+
 .main-container {
   width: 100%;
   padding: 0 160px;

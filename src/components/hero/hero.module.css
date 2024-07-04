@@ -6,8 +6,8 @@
   justify-content: center;
   flex-direction: column;
   gap: 30px;
-  overflow: hidden;
 }
+
 
 .underline {
   position: relative;
@@ -50,8 +50,6 @@
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 2.5rem;
-  display: inline-block;
-  overflow: hidden;
 }
 
 .heroContainer .socialIcons {
@@ -86,7 +84,7 @@
   transition: all 0.2s ease-out;
 }
 
-.container:hover img{
+.container:hover img {
   transform: rotate(15deg);
   scale: 1.1;
 }

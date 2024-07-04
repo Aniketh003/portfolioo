@@ -14,10 +14,6 @@ const Navbar = () => {
     if (isActive) setIsActive(!isActive)
   }, [pathname])
 
-  useEffect(() => {
-    gsap.fromTo(hamburgerRef.current, { x: 200 }, { x: 0, duration: 1, ease: "elastic.inOut" });
-  }, [])
-
   return (
     <>
       <nav className={styles.navbar}>
