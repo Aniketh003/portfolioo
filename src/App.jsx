@@ -35,7 +35,6 @@ function App() {
   return (
     <LocomotiveScrollProvider options={{smooth: true,}} containerRef={mainRef}>
       <div className='main' ref={mainRef}>
-        <Loader comp={mainRef}/>
         <motion.div className="progress-bar" style={{ scaleX }} />
         <div className="main-container">
           <div className="container">
