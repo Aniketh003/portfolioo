@@ -20,8 +20,9 @@ const Works = () => {
                 ...toVars,
                 scrollTrigger: {
                     trigger: project,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
+                    start: 'top center',
+                    end: 'bottom center',
+                    
                     toggleActions: 'play reverse play reverse',
                 }
             });
