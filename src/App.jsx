@@ -37,8 +37,8 @@ function App() {
       <div className='main' ref={mainRef}>
         <motion.div className="progress-bar" style={{ scaleX }} />
         <div className="main-container">
+          <Navbar />
           <div className="container">
-            <Navbar />
             <HeroComponents />
             <Works />
           </div>
